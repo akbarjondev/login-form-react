@@ -43,7 +43,7 @@ function App() {
   return (
     <div className='container' ref={conatinerRef}>
       <header className='d-flex align-items-center justify-content-between'>
-        <h1 className='text-center'>{dictionary[lang].top}</h1>
+        <h1 className='text-center my-4'>{dictionary[lang].top}</h1>
 
         <div className="custom-control custom-switch">
           <input type="checkbox" className="custom-control-input" onClick={switchDay} id="customSwitch1" />

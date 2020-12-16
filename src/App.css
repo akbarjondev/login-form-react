@@ -41,3 +41,15 @@
   color: #ffffff;
   background-color: red;
 }
+
+.bg-dark p,
+.bg-dark h1,
+.bg-dark label {
+  color: #ffffff;
+}
+
+.bg-dark input,
+.bg-dark select {
+  color: #ffffff;
+  background-color: #6c757d;
+}
