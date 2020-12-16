@@ -5,6 +5,7 @@ const dictionary = {
     form_username: 'Foydalanuvchi ismi',
     form_password: `Maxfiy so'z`,
     button: 'Yuborish',
+    switcher: 'Kun/Tun',
   },
   en: {
     top: 'Welcome',
@@ -12,6 +13,7 @@ const dictionary = {
     form_username: 'Username',
     form_password: `Password`,
     button: 'Submit',
+    switcher: 'Day/Night',
   }
 }
 

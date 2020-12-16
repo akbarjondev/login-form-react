@@ -37,6 +37,10 @@
   }
 }
 
+#body, #root, .container {
+  height: 100vh;
+}
+
 .bg-red {
   color: #ffffff;
   background-color: red;

@@ -41,36 +41,39 @@ function App() {
   }
 
   return (
-    <div className='container' ref={conatinerRef}>
+    <div className='container d-flex flex-column justify-content-between' ref={conatinerRef}>
       <header className='d-flex align-items-center justify-content-between'>
         <h1 className='text-center my-4'>{dictionary[lang].top}</h1>
 
         <div className="custom-control custom-switch">
           <input type="checkbox" className="custom-control-input" onClick={switchDay} id="customSwitch1" />
-          <label className="custom-control-label" htmlFor="customSwitch1">Night/Light</label>
+          <label className="custom-control-label" htmlFor="customSwitch1">{dictionary[lang].switcher}</label>
+        </div>
+        <div className="form-group">
+          <select className='form-control' defaultValue={lang} onChange={changeLang}>
+            <option value="uz">UZB</option>
+            <option value="en">ENG</option>
+          </select>
         </div>
       </header>
 
-      <div className="form-group w-25">
-        <select className='form-control' defaultValue={lang} onChange={changeLang}>
-          <option value="uz">O'zbekcha</option>
-          <option value="en">English</option>
-        </select>
-      </div>
-      <div className="form-group">
-        <label>
-          {dictionary[lang].form_username}
-          <input type="text" className="form-control" ref={nameRef} />
-        </label>
-        <br />
-        <label>
-          {dictionary[lang].form_password}
-          <input type="password" className="form-control" ref={passRef} />
-        </label>
+      <div className="form">
+        <div className="form-group">
+          <label>
+            {dictionary[lang].form_username}
+            <input type="text" className="form-control" ref={nameRef} />
+          </label>
+          <br />
+          <label>
+            {dictionary[lang].form_password}
+            <input type="password" className="form-control" ref={passRef} />
+          </label>
+        </div>
+
+        <button className='btn btn-success' onClick={checkLength}>{dictionary[lang].button}</button>
       </div>
 
-      <button className='btn btn-success' onClick={checkLength}>{dictionary[lang].button}</button>
-      <p className="mt-5">{dictionary[lang].bottom}</p>
+      <p className="mt-auto">{dictionary[lang].bottom}</p>
     </div>
   );
 }
