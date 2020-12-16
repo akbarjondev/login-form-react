@@ -12,21 +12,22 @@ function App() {
   // states
   const [lang, setLang] = useState('uz');
 
+  //alert
+  let [alert, setAlert] = useState(true);
+
   // checks length of inputs
   const checkLength = () => {
     nameRef.current.classList = 'form-control';
     passRef.current.classList = 'form-control';
 
-    if (passRef.current.value.trim().length < 5) {
-      passRef.current.classList.add('border-danger');
-    } else {
-      passRef.current.classList.add('border-success');
-    }
-
-    if (nameRef.current.value.trim().length < 3) {
+    if (passRef.current.value.trim().length < 5 || nameRef.current.value.trim().length < 3) {
       nameRef.current.classList.add('border-danger');
+      passRef.current.classList.add('border-danger');
+      setAlert(<div class="alert alert-danger" role="alert">Xato to'ldirildi!</div>);
     } else {
       nameRef.current.classList.add('border-success');
+      passRef.current.classList.add('border-success');
+      setAlert(true);
     }
   }
 
@@ -58,15 +59,16 @@ function App() {
       </header>
 
       <div className="form">
-        <div className="form-group">
-          <label>
+        <div className="form-group w-25">
+          {alert}
+          <label className='w-100'>
             {dictionary[lang].form_username}
-            <input type="text" className="form-control" ref={nameRef} />
+            <input type="text" className="form-control w-100" ref={nameRef} />
           </label>
           <br />
-          <label>
+          <label className='w-100'>
             {dictionary[lang].form_password}
-            <input type="password" className="form-control" ref={passRef} />
+            <input type="password" className="form-control w-100" ref={passRef} />
           </label>
         </div>
 
