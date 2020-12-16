@@ -36,14 +36,8 @@ function App() {
   }
 
   // switch day or night
-  const switchDay = (e) => {
-    document.getElementById('')
-    conatinerRef.current.classList.toggle('bg-dark');
-    if (Boolean(e.target.checked)) {
-      console.log('on');
-    } else {
-      console.log('off')
-    }
+  const switchDay = () => {
+    document.getElementById('body').classList.toggle('bg-dark');
   }
 
   return (
@@ -76,7 +70,7 @@ function App() {
       </div>
 
       <button className='btn btn-success' onClick={checkLength}>{dictionary[lang].button}</button>
-      <p className="text-dark mt-5">{dictionary[lang].bottom}</p>
+      <p className="mt-5">{dictionary[lang].bottom}</p>
     </div>
   );
 }
