@@ -8,13 +8,20 @@ import './App.css';
 function App() {
 
   return (
+    <>
     <div className='container d-flex flex-column justify-content-between'>
       <Header />
+      {/*header*/}
 
       <Body />
+      {/*body*/}
 
       <Footer />
+      {/*footer*/}
+		  
     </div>
+    {/*conatainer*/}
+    </>
   );
 }
 

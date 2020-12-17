@@ -22,12 +22,12 @@ const dictionary = [
   {
     lang: 'ru',
     language: `Rus`,
-    top: 'ru: Welcome',
-    bottom: 'ru: Developed by CompanyX',
-    form_username: 'ru: Username',
-    form_password: `ru: Password`,
-    button: 'ru: Submit',
-    switcher: 'ru: Day/Night',
+    top: 'ruscha Welcome',
+    bottom: 'ruscha Developed by CompanyX',
+    form_username: 'ruscha Username',
+    form_password: `ruscha Password`,
+    button: 'ruscha Submit',
+    switcher: 'ruscha Day/Night',
   },
 ];
 
