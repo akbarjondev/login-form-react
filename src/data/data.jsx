@@ -1,5 +1,7 @@
-const dictionary = {
-  uz: {
+const dictionary = [
+  {
+    lang: 'uz',
+    language: `O'zb`,
     top: 'Xush kelibsiz',
     bottom: 'X kompaniyasi ishlab chiqqan',
     form_username: 'Foydalanuvchi ismi',
@@ -7,14 +9,16 @@ const dictionary = {
     button: 'Yuborish',
     switcher: 'Kun/Tun',
   },
-  en: {
+  {
+    lang: 'en',
+    language: `Eng`,
     top: 'Welcome',
     bottom: 'Developed by CompanyX',
     form_username: 'Username',
     form_password: `Password`,
     button: 'Submit',
     switcher: 'Day/Night',
-  }
-}
+  },
+];
 
 export { dictionary };

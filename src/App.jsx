@@ -1,81 +1,19 @@
-import { useRef, useState } from 'react';
-import { dictionary } from './data/data';
+import Header from './components/Header';
+import Body from './components/Body';
+import Footer from './components/Footer';
+
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 function App() {
-  // references
-  const nameRef = useRef(null);
-  const passRef = useRef(null);
-  const conatinerRef = useRef(null);
-
-  // states
-  const [lang, setLang] = useState('uz');
-
-  //alert
-  let [alert, setAlert] = useState(true);
-
-  // checks length of inputs
-  const checkLength = () => {
-    nameRef.current.classList = 'form-control';
-    passRef.current.classList = 'form-control';
-
-    if (passRef.current.value.trim().length < 5 || nameRef.current.value.trim().length < 3) {
-      nameRef.current.classList.add('border-danger');
-      passRef.current.classList.add('border-danger');
-      setAlert(<div class="alert alert-danger" role="alert">Xato to'ldirildi!</div>);
-    } else {
-      nameRef.current.classList.add('border-success');
-      passRef.current.classList.add('border-success');
-      setAlert(true);
-    }
-  }
-
-  // change lang with select
-  const changeLang = (e) => {
-    setLang(e.target.value);
-  }
-
-  // switch day or night
-  const switchDay = () => {
-    document.getElementById('body').classList.toggle('bg-dark');
-  }
 
   return (
-    <div className='container d-flex flex-column justify-content-between' ref={conatinerRef}>
-      <header className='d-flex align-items-center justify-content-between'>
-        <h1 className='text-center my-4'>{dictionary[lang].top}</h1>
+    <div className='container d-flex flex-column justify-content-between'>
+      <Header />
 
-        <div className="custom-control custom-switch">
-          <input type="checkbox" className="custom-control-input" onClick={switchDay} id="customSwitch1" />
-          <label className="custom-control-label" htmlFor="customSwitch1">{dictionary[lang].switcher}</label>
-        </div>
-        <div className="form-group">
-          <select className='form-control' defaultValue={lang} onChange={changeLang}>
-            <option value="uz">UZB</option>
-            <option value="en">ENG</option>
-          </select>
-        </div>
-      </header>
+      <Body />
 
-      <div className="form">
-        <div className="form-group w-25">
-          {alert}
-          <label className='w-100'>
-            {dictionary[lang].form_username}
-            <input type="text" className="form-control w-100" ref={nameRef} />
-          </label>
-          <br />
-          <label className='w-100'>
-            {dictionary[lang].form_password}
-            <input type="password" className="form-control w-100" ref={passRef} />
-          </label>
-        </div>
-
-        <button className='btn btn-success' onClick={checkLength}>{dictionary[lang].button}</button>
-      </div>
-
-      <p className="mt-auto">{dictionary[lang].bottom}</p>
+      <Footer />
     </div>
   );
 }
