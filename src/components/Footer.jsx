@@ -10,7 +10,7 @@ export default function Footer() {
     		{
           (dictionary.find(data => {
             if(data.lang === lang) {
-                return data;
+              return data;
             }
             return null;
           })).bottom
